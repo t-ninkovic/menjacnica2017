@@ -14,8 +14,10 @@ public class SOUcitajIzFajla {
 			ObjectInputStream in = new ObjectInputStream(
 					new BufferedInputStream(new FileInputStream(putanja)));
 			
+			LinkedList<Valuta> lista = (LinkedList<Valuta>)(in.readObject());
+
 			in.close();
-			return (LinkedList<Valuta>)(in.readObject());
+			return lista;
 			
 			
 		}catch(Exception e){
