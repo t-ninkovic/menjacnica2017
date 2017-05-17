@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.util.LinkedList;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -133,6 +134,10 @@ public class GUIKontroler {
 	public static void obrisiValutu(Valuta valuta) {
 		sistem.obrisiValutu(valuta);
 		mGUI.prikaziSveValute();
+	}
+	
+	public static LinkedList<Valuta> vratiKursnuListu() {
+		return sistem.vratiKursnuListu();
 	}
 
 }

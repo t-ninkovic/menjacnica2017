@@ -225,8 +225,13 @@ public class ObrisiKursGUI extends JFrame {
 	}
 
 	private void obrisiValutu() {
-		GUIKontroler.obrisiValutu(valuta);
-		dispose();
+		try {
+			GUIKontroler.obrisiValutu(valuta);
+			dispose();
+		} catch (Exception e1) {
+			JOptionPane.showMessageDialog(contentPane, e1.getMessage(),
+					"Greska", JOptionPane.ERROR_MESSAGE);
+		}
 
 	}
 }

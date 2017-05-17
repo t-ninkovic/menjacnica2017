@@ -238,7 +238,13 @@ public class IzvrsiZamenuGUI extends JFrame {
 	}
 	
 	private void izvrsiZamenu(){
-		double iznos = Double.parseDouble(textFieldIznos.getText());
-		textFieldKonacniIznos.setText(""+GUIKontroler.izvrsiZamenu(valuta, rdbtnProdaja.isSelected(), iznos));
+		try {
+			double iznos = Double.parseDouble(textFieldIznos.getText());
+			textFieldKonacniIznos
+					.setText("" + GUIKontroler.izvrsiZamenu(valuta, rdbtnProdaja.isSelected(), iznos));
+		} catch (Exception e1) {
+			JOptionPane.showMessageDialog(contentPane, e1.getMessage(),
+					"Greska", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 }
